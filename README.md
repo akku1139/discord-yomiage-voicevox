@@ -2,6 +2,7 @@
 
 依頼品
 
+
 ## 必要なパーミッション
 
 - Read Messages/View Channels
@@ -13,6 +14,13 @@
 
 `2150712320`
 
-## 必要なインテント 
+## 必要な特権インテント 
 
 - MESSAGE CONTENT INTENT
+
+## 環境変数
+
+`TOKEN` Discord Botのトークンを設置
+
+`VOICEVOX_SERVER` VOICEVOXサーバーのURLを設置
+(デフォルトは `http://localhost:50021/`)

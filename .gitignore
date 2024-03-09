@@ -4,6 +4,8 @@ replit.nix
 
 bun.lockb
 
+/voicevox
+
 # Based on https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore
 
 # Logs
