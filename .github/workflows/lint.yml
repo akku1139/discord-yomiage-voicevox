@@ -7,13 +7,8 @@ on:
       - main
 
 jobs:
-  loop:
+  lint:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        scripts:
-          - lint
 
     steps:
       - name: Checkout
@@ -28,11 +23,11 @@ jobs:
         with:
           path: |
             node_modules
-          key: npm-deps-${{ hashFiles('package.json') }}
-          restore-keys: npm-deps-
+          key: bun-deps-${{ hashFiles('package.json') }}
+          restore-keys: bun-deps-
 
       - name: Install Dependencies
         if: steps.node_modules_cache_id.outputs.cache-hit != 'true'
-        run: "npm install"
+        run: "bun install"
 
-      - run: "npm run ${{ matrix.scripts }}"
+      - run: "bun run lint"
